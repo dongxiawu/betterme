@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group>
         <item android:id="@+id/data"
-              android:title="我的统计数据"/>
+            android:title="我的统计数据"
+            android:icon="@drawable/ic_action_user"
+            />
         <item android:id="@+id/future"
-            android:title="未来计划表"/>
+            android:title="未来计划表"
+            android:icon="@drawable/ic_action_plan"
+            />
         <item android:id="@+id/rest"
-            android:title="小憩"/>
+            android:title="小憩"
+            android:icon="@drawable/ic_relax"
+            />
         <item android:id="@+id/sync"
-            android:title="云同步"/>
+            android:title="云同步"
+            android:icon="@drawable/ic_action_soundcloud"
+            />
     </group>
     <item android:id="@+id/season_card"
-        android:title="季度卡" />
+        android:title="季度卡"
+        android:icon="@drawable/ic_action_seasoncard"
+        />
     <item android:id="@+id/more"
         android:title="更多设置"/>
-    <!--<item android:id="+id/about_help"-->
-        <!--android:title="关于帮助"-->
-        <!--/>-->
+    <item android:id="@+id/about_help"
+        android:title="关于帮助" />
+    <item android:id="@+id/feedback"
+        android:title="反馈" />
 </menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/data"
+              android:title="我的统计数据"/>
+        <item android:id="@+id/future"
+            android:title="未来计划表"/>
+        <item android:id="@+id/rest"
+            android:title="小憩"/>
+        <item android:id="@+id/sync"
+            android:title="云同步"/>
+    </group>
+    <item android:id="@+id/season_card"
+        android:title="季度卡" />
+    <item android:id="@+id/more"
+        android:title="更多设置"/>
+    <!--<item android:id="+id/about_help"-->
+        <!--android:title="关于帮助"-->
+        <!--/>-->
+</menu>

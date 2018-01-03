@@ -2,7 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group>
-        <item android:id="@+id/data"
+        <item android:title="菜单"/>
+
+        <item android:id="@+id/statistic"
             android:title="我的统计数据"
             android:icon="@drawable/ic_action_user"
             />
@@ -10,7 +12,7 @@
             android:title="未来计划表"
             android:icon="@drawable/ic_action_plan"
             />
-        <item android:id="@+id/rest"
+        <item android:id="@+id/relax"
             android:title="小憩"
             android:icon="@drawable/ic_relax"
             />
@@ -19,13 +21,14 @@
             android:icon="@drawable/ic_action_soundcloud"
             />
     </group>
-    <item android:id="@+id/season_card"
+
+    <item android:id="@+id/vip"
         android:title="季度卡"
         android:icon="@drawable/ic_action_seasoncard"
         />
-    <item android:id="@+id/more"
+    <item android:id="@+id/settings"
         android:title="更多设置"/>
-    <item android:id="@+id/about_help"
+    <item android:id="@+id/about"
         android:title="关于帮助" />
     <item android:id="@+id/feedback"
         android:title="反馈" />

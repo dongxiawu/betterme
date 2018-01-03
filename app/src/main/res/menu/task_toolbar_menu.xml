@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/add_task"
+        android:title="添加待办"
+        android:icon="@drawable/ic_action_add_task"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/edit"
+        android:title="编辑排序"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/history"
+        android:title="历史记录"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/hard"
+        android:title="学霸模式"
+        app:showAsAction="never"/>
+
+</menu>

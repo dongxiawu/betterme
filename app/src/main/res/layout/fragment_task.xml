@@ -2,12 +2,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.zoe.dongxia.betterme.TaskFragment">
+    tools:context="com.zoe.dongxia.betterme.fragment.TaskFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/empty_tips"
+            android:layout_centerInParent="true"/>
+        <TextView
+            android:layout_below="@+id/image"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="当前没有待办集，点击右上角的 + 号创建一个吧" />
+    </RelativeLayout>
 
 </FrameLayout>

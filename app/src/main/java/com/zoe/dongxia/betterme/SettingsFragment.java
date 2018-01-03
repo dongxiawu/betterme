@@ -1,14 +1,10 @@
 package com.zoe.dongxia.betterme;
 
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.support.v7.preference.PreferenceFragmentCompat;
 
 
-public class SettingsFragment extends PreferenceFragment {
+public class SettingsFragment extends PreferenceFragmentCompat {
 
     public static SettingsFragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
@@ -16,11 +12,8 @@ public class SettingsFragment extends PreferenceFragment {
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.settings);
+        setPreferencesFromResource(R.xml.settings, rootKey);
     }
-
 }

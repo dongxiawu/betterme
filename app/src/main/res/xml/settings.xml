@@ -6,12 +6,12 @@
             android:title="工作背景音乐/背景白噪声"
             android:summary="舒缓悠扬的音乐让您更加高效"
             />
-        <SwitchPreference
-            android:id="@+id/lock"
-            android:key="lock"
-            android:title="锁屏番茄钟"
-            android:summary="在锁屏界面显示番茄钟"
-            />
+        <!--<SwitchPreference-->
+            <!--android:id="@+id/lock"-->
+            <!--android:key="lock"-->
+            <!--android:title="锁屏番茄钟"-->
+            <!--android:summary="在锁屏界面显示番茄钟"-->
+            <!--/>-->
         <PreferenceScreen
             android:key="more_core_settings"
             android:title="更多核心设置"
@@ -21,12 +21,12 @@
 
     <PreferenceCategory
         android:title="学霸模式">
-        <SwitchPreference
-            android:id="@+id/strict_mode"
-            android:key="strict_mode"
-            android:title="学霸模式"
-            android:summary="在计时开始后会禁止其他App打开"
-            />
+        <!--<SwitchPreference-->
+            <!--android:id="@+id/strict_mode"-->
+            <!--android:key="strict_mode"-->
+            <!--android:title="学霸模式"-->
+            <!--android:summary="在计时开始后会禁止其他App打开"-->
+            <!--/>-->
         <PreferenceScreen
             android:key="white_list"
             android:title="学霸模式白名单"
@@ -36,12 +36,12 @@
 
     <PreferenceCategory
         android:title="外观主题设置">
-        <SwitchPreference
-            android:id="@+id/more_poster"
-            android:key="more_poster"
-            android:title="更多高清美图海报"
-            android:summary="运行番茄钟时的全屏海报"
-            />
+        <!--<SwitchPreference-->
+            <!--android:id="@+id/more_poster"-->
+            <!--android:key="more_poster"-->
+            <!--android:title="更多高清美图海报"-->
+            <!--android:summary="运行番茄钟时的全屏海报"-->
+            <!--/>-->
         <PreferenceScreen
             android:key="theme_color"
             android:title="主题颜色"

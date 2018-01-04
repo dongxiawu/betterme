@@ -13,4 +13,14 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <declare-styleable name="PagerNavigationStrip">
+        <attr name="textColorNormal" format="color"/>
+        <attr name="textColorSelected" format="color"/>
+        <attr name="textSize" format="dimension"/>
+        <attr name="text_icon_padding" format="dimension"/>
+        <attr name="menu" format="reference"/>
+    </declare-styleable>
+
+
 </resources>

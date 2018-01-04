@@ -2,6 +2,8 @@ package com.zoe.dongxia.betterme.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -17,6 +19,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.zoe.dongxia.betterme.R;
 import com.zoe.dongxia.betterme.fragment.TaskFragment;
@@ -30,6 +34,20 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
 
     private NavigationView mNavigationView;
+
+    private View mToDoTabView;
+
+    private ImageView mTodoIcon;
+
+    private TextView mTodoTitle;
+
+    private View mTaskTabView;
+
+    private ImageView mTaskIcon;
+
+    private TextView mTaskTitle;
+
+    private int mCurrentPosition = -1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,12 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager.setAdapter(
                 new FragmentPagerAdapter(getSupportFragmentManager()) {
-
-                    @Override
-                    public CharSequence getPageTitle(int position) {
-                        return position + "";
-                    }
-
                     @Override
                     public Fragment getItem(int position) {
                         if (position == 0){
@@ -98,10 +110,29 @@ public class MainActivity extends AppCompatActivity {
                         return 2;
                     }
                 });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                onPageChange(position);
+            }
+        });
+
+        mToDoTabView = findViewById(R.id.todo_layout);
+        mTodoIcon = findViewById(R.id.todo_icon);
+        mTodoTitle = findViewById(R.id.todo_title);
+        mToDoTabView.setOnClickListener(mOnTabClickListener);
+
+        mTaskTabView = findViewById(R.id.task_layout);
+        mTaskIcon = findViewById(R.id.task_icon);
+        mTaskTitle = findViewById(R.id.task_title);
+        mTaskTabView.setOnClickListener(mOnTabClickListener);
+
+
     }
 
     private void initData(){
-
+        onPageChange(mViewPager.getCurrentItem());
     }
 
     NavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -214,4 +245,35 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     };
+
+    View.OnClickListener mOnTabClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()){
+                case R.id.todo_layout:
+                    onPageChange(0);
+                    mViewPager.setCurrentItem(0);
+                    break;
+                case R.id.task_layout:
+                    onPageChange(1);
+                    mViewPager.setCurrentItem(1);
+                    break;
+                    default:break;
+            }
+        }
+    };
+
+    private void onPageChange(int newPos){
+        if (mCurrentPosition != newPos){
+            mCurrentPosition = newPos;
+            mTodoIcon.setImageResource(
+                    mCurrentPosition==0 ? R.drawable.todo_press : R.drawable.todo_un_press );
+            mTodoTitle.setTextColor(
+                    mCurrentPosition==0 ? Color.GREEN : Color.BLACK );
+            mTaskIcon.setImageResource(
+                    mCurrentPosition==1 ? R.drawable.tasks_press : R.drawable.tasks_un_press );
+            mTaskTitle.setTextColor(
+                    mCurrentPosition==1 ? Color.GREEN : Color.BLACK );
+        }
+    }
 }

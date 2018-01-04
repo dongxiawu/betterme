@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/todo"
+        android:title="待办"
+        android:icon="@drawable/todo_un_press"
+        />
+    <item android:id="@+id/task"
+        android:title="待办集"
+        android:icon="@drawable/tasks_un_press"
+        />
+</menu>

@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
 
     private int mCurrentPosition = -1;
 
+    private Fragment mTodoFragment;
+
+    private Fragment mTaskFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -97,9 +101,15 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public Fragment getItem(int position) {
                         if (position == 0){
-                            return TodoFragment.newInstance();
+                            if (mTodoFragment == null){
+                                mTodoFragment = TodoFragment.newInstance();
+                            }
+                            return mTodoFragment;
                         }else if (position ==1){
-                            return TaskFragment.newInstance();
+                            if (mTaskFragment == null){
+                                mTaskFragment = TaskFragment.newInstance();
+                            }
+                            return mTaskFragment;
                         }else {
                             return null;
                         }

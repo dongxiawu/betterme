@@ -2,8 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <group>
-        <item android:title="菜单"/>
-
         <item android:id="@+id/statistic"
             android:title="我的统计数据"
             android:icon="@drawable/ic_action_user"
@@ -27,9 +25,15 @@
         android:icon="@drawable/ic_action_seasoncard"
         />
     <item android:id="@+id/settings"
-        android:title="更多设置"/>
+        android:title="更多设置"
+        android:icon="@drawable/ic_settings_white_24dp"
+        />
     <item android:id="@+id/about"
-        android:title="关于帮助" />
+        android:title="关于帮助"
+        android:icon="@drawable/ic_help_white_24dp"
+        />
     <item android:id="@+id/feedback"
-        android:title="反馈" />
+        android:title="反馈"
+        android:icon="@drawable/ic_feedback_white_24dp"
+        />
 </menu>

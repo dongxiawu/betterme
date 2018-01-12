@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="time_uint">
+        <item>小时</item>
+        <item>分钟</item>
+        <item>次</item>
+        <item>自定义</item>
+    </string-array>
+
+    <string-array name="cycle">
+        <item>每天</item>
+        <item>每周</item>
+        <item>每月</item>
+    </string-array>
+</resources>

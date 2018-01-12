@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.zoe.dongxia.betterme"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -26,6 +26,15 @@ dependencies {
     implementation 'com.android.support:preference-v7:26.1.0'
     implementation 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'com.android.support:support-v4:26.1.0'
+
+//    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
+//    implementation 'org.greenrobot:eventbus:3.1.1'
+//    implementation 'com.github.bumptech.glide:glide:4.5.0'
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+//    implementation 'com.alibaba:fastjson:1.1.67.android'
+//
+//    implementation 'org.greenrobot:greendao:3.2.2' // add library
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'

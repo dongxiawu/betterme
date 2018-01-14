@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -17,9 +18,9 @@ public class AddTodoDialogProxy {
 
     private Dialog mAddTodoDialog;
 
-    private RadioGroup mToDoTypeGroup;
-
     private EditText mTodoName;
+
+    private EditText mTodoPeriod;
 
     public AddTodoDialogProxy(@NonNull Context context){
         mContext = context;
@@ -45,7 +46,7 @@ public class AddTodoDialogProxy {
         LayoutInflater inflater = LayoutInflater.from(mContext);
         View content = inflater.inflate(R.layout.add_todo_dialog_content,null);
         mTodoName = content.findViewById(R.id.todo_name);
-        mToDoTypeGroup = content.findViewById(R.id.todo_type);
+        mTodoPeriod = content.findViewById(R.id.todo_period);
 
         return content;
     }
@@ -59,10 +60,19 @@ public class AddTodoDialogProxy {
         public void onClick(View v) {
             switch (v.getId()){
                 case R.id.done:
-                    if (mTodoName.getEditableText().toString().isEmpty()){
-                        Toast.makeText(mContext,"待办名称不能为空",Toast.LENGTH_SHORT).show();
+                    if (!isLegal()){
+                        Toast.makeText(mContext,"参数不合法",Toast.LENGTH_SHORT).show();
                     }else {
+                        String name = mTodoName.getEditableText().toString();
 
+                        int period = 0;
+                        if (mTodoPeriod.getEditableText().toString().isEmpty()){
+                            period = Integer.parseInt(mTodoPeriod.getHint().toString());
+                        }else {
+                            period = Integer.parseInt(mTodoPeriod.getEditableText().toString());
+                        }
+
+                        Toast.makeText(mContext,name + period,Toast.LENGTH_SHORT).show();
                         mAddTodoDialog.dismiss();
                     }
                     break;
@@ -83,6 +93,13 @@ public class AddTodoDialogProxy {
 
     public interface TodoDoneListener{
 
+    }
+
+    public boolean isLegal(){
+        if (mTodoName.getEditableText().toString().isEmpty()){
+            return false;
+        }
+        return true;
     }
 
 }

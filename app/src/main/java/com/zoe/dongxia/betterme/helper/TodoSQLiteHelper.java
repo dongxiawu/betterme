@@ -11,6 +11,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class TodoSQLiteHelper extends SQLiteOpenHelper{
     private Context mContext;
 
+    private static final String CREATE_TABLE_TODO
+            = "CREATE TABLE Todo ("
+            + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + "name TEXT NOT NULL)";
+
 
     public TodoSQLiteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(context,name,factory,version);
@@ -19,7 +24,7 @@ public class TodoSQLiteHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        db.execSQL();
+        db.execSQL(CREATE_TABLE_TODO);
     }
 
     @Override

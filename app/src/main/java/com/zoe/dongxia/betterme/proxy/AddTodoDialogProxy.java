@@ -1,7 +1,9 @@
 package com.zoe.dongxia.betterme.proxy;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
@@ -12,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.zoe.dongxia.betterme.R;
+import com.zoe.dongxia.betterme.helper.TodoSQLiteHelper;
 
 public class AddTodoDialogProxy {
     private Context mContext;
@@ -22,6 +25,8 @@ public class AddTodoDialogProxy {
 
     private EditText mTodoPeriod;
 
+    private TodoSQLiteHelper mSQLiteHelper;
+
     public AddTodoDialogProxy(@NonNull Context context){
         mContext = context;
 
@@ -29,6 +34,7 @@ public class AddTodoDialogProxy {
         View title = initTitleView();
         View content = initContentView();
         mAddTodoDialog = builder.setCustomTitle(title).setView(content).create();
+        mSQLiteHelper = new TodoSQLiteHelper(context,"Todo.db",null,1);
     }
 
     private View initTitleView(){
@@ -74,6 +80,11 @@ public class AddTodoDialogProxy {
 
                         Toast.makeText(mContext,name + period,Toast.LENGTH_SHORT).show();
                         mAddTodoDialog.dismiss();
+
+                        SQLiteDatabase database = mSQLiteHelper.getWritableDatabase();
+                        ContentValues values = new ContentValues();
+                        values.put("name",name);
+                        database.insert("Todo",null,values);
                     }
                     break;
                 case R.id.cancel:
